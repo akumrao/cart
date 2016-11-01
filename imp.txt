@@ -1,10 +1,10 @@
 sprintwe@sprintwell.com 
-iso*
+is******
 
 
 gmail account
 tester.sprintwell@gmail.com
-testing@1
+testing@
 
 
 
@@ -17,7 +17,7 @@ https://console.developers.google.com/apis/credentials?project=sprintwell-143314
 https://drive.google.com/drive/my-drive
 
 
-
+cat /etc/nginx/sites-available/default
 server {
         listen 80 default_server;
         listen [::]:80 default_server ipv6only=on;
@@ -26,5 +26,95 @@ server {
 #       root /usr/share/nginx/html;
 #        root /data/google-api-php-client-2.0.3;
         index index.html index.htm;
+
+
+
+install xdebug for both firefox and chrome
+
+2016-09-11 14:31:48 status installed ureadahead:amd64 0.100.0-16
+2016-09-11 14:31:49 status installed man-db:amd64 2.6.7.1-1ubuntu1
+2016-09-11 14:31:51 status installed php5-common:amd64 5.5.9+dfsg-1ubuntu4.19
+2016-09-11 14:31:52 status installed php5-json:amd64 1.3.2-2build1
+2016-09-11 14:31:52 status installed php5-fpm:amd64 5.5.9+dfsg-1ubuntu4.19
+2016-09-11 14:31:52 status installed ureadahead:amd64 0.100.0-16
+2016-09-11 19:31:10 status half-installed php5-xdebug:amd64 2.2.3-2build1
+2016-09-11 19:31:10 status installed php5-xdebug:amd64 2.2.3-2build1
+2016-09-11 20:28:45 status half-installed default-jre-headless:amd64 2:1.7-51
+2016-09-11 20:28:45 status half-installed libxml-commons-resolver1.1-java:all 1.2-7build1
+2016-09-11 20:28:46 status half-installed libxml-commons-external-java:all 1.4.01-2build1
+2016-09-11 20:28:46 status half-installed libxerces2-java:all 2.11.0-7
+2016-09-11 20:28:47 status half-installed ant:all 1.9.3-2build1
+2016-09-11 20:28:47 status half-installed ant-optional:all 1.9.3-2build1
+2016-09-11 20:28:48 status half-installed default-jre:amd64 2:1.7-51
+2016-09-11 20:28:48 status half-installed libecj-java:all 3.9.0-1
+2016-09-11 20:28:49 status half-installed libcommons-pool-java:all 1.6-2
+2016-09-11 20:28:49 status half-installed libcommons-collections3-java:all 3.2.1-6
+2016-09-11 20:28:49 status half-installed libcommons-dbcp-java:all 1.4-3ubuntu1
+2016-09-11 20:28:50 status half-installed libservlet3.0-java:all 7.0.52-1ubuntu0.6
+2016-09-11 20:28:50 status half-installed libtomcat7-java:all 7.0.52-1ubuntu0.6
+2016-09-11 20:28:51 status half-installed eclipse-platform-data:all 3.8.1-5.1
+2016-09-11 20:28:53 status half-installed eclipse-platform-data:all 3.8.1-5.1
+2016-09-11 20:28:54 status half-installed libequinox-osgi-java:all 3.8.1-5.1
+2016-09-11 20:28:54 status half-installed libeasymock-java:all 2.5.2+ds-1
+2016-09-11 20:28:55 status half-installed libosgi-core-java:all 4.3.0-4
+2016-09-11 20:28:55 status half-installed libfelix-bundlerepository-java:all 1.6.6-2
+2016-09-11 20:28:56 status half-installed libaspectj-java:all 1.6.12+dfsg-3
+2016-09-11 20:28:57 status half-installed aspectj:all 1.6.12+dfsg-3
+2016-09-11 20:28:57 status half-installed libgeronimo-osgi-support-java:all 1.0-2
+2016-09-11 20:28:57 status half-installed libgeronimo-jpa-2.0-spec-java:all 1.1-2
+2016-09-11 20:28:58 status half-installed libosgi-foundation-ee-java:all 4.2.0-1
+2016-09-11 20:28:58 status half-installed libservlet2.5-java:all 6.0.39-1
+2016-09-11 20:28:58 status half-installed libosgi-compendium-java:all 4.3.0-1
+2016-09-11 20:28:59 status half-installed libfelix-gogo-runtime-java:all 0.10.0-2
+2016-09-11 20:28:59 status half-installed libfelix-gogo-command-java:all 0.12.0-2
+2016-09-11 20:28:59 status half-installed libfelix-gogo-shell-java:all 0.10.0-2
+2016-09-11 20:29:00 status half-installed libicu4j-4.4-java:all 4.4.2.2-1
+2016-09-11 20:29:00 status half-installed libswt-webkit-gtk-3-jni:amd64 3.8.2-3
+2016-09-11 20:29:00 status half-installed eclipse-rcp:amd64 3.8.1-5.1
+2016-09-11 20:29:01 status half-installed libcommons-codec-java:all 1.9-1
+2016-09-11 20:29:02 status half-installed libapache-pom-java:all 10-2build1
+2016-09-11 20:29:02 status half-installed libcommons-parent-java:all 22-2build1
+2016-09-11 20:29:02 status half-installed libcommons-logging-java:all 1.1.3-1
+2016-09-11 20:29:03 status half-installed libcommons-httpclient-java:all 3.1-10.2ubuntu0.14.04.1
+2016-09-11 20:29:03 status half-installed libjetty8-java:all 8.1.3-9
+2016-09-11 20:29:04 status half-installed libjsch-java:all 0.1.50-1ubuntu1
+2016-09-11 20:29:04 status half-installed liblucene2-java:all 2.9.4+ds1-4
+2016-09-11 20:29:05 status half-installed binfmt-support:amd64 2.1.4-1
+2016-09-11 20:29:05 status half-installed binfmt-support:amd64 2.1.4-1
+2016-09-11 20:29:05 status half-installed fastjar:amd64 2:0.98-5
+2016-09-11 20:29:06 status half-installed jarwrapper:all 0.45ubuntu1
+2016-09-11 20:29:06 status half-installed libcommons-lang-java:all 2.6-3ubuntu2
+2016-09-11 20:29:06 status half-installed libcommons-cli-java:all 1.2-3ubuntu1
+2016-09-11 20:29:07 status half-installed sat4j:all 2.3.2-1
+2016-09-11 20:29:07 status half-installed eclipse-platform:amd64 3.8.1-5.1
+2016-09-11 20:29:08 status half-installed eclipse-platform:amd64 3.8.1-5.1
+2016-09-11 20:29:08 status half-installed eclipse-platform:amd64 3.8.1-5.1
+2016-09-11 20:29:08 status half-installed libdb5.3-java-jni:amd64 5.3.28-3ubuntu3
+2016-09-11 20:29:09 status half-installed default-jdk:amd64 2:1.7-51
+2016-09-11 20:29:09 status half-installed junit:all 3.8.2-8build1
+2016-09-11 20:29:09 status half-installed libhamcrest-java:all 1.3-4
+2016-09-11 20:29:10 status half-installed junit4:all 4.11-2
+2016-09-11 20:29:10 status half-installed eclipse-jdt:all 3.8.1-5.1
+2016-09-11 20:29:12 status half-installed libasm3-java:all 3.3.2-2
+2016-09-11 20:29:12 status half-installed eclipse-pde:amd64 3.8.1-5.1
+2016-09-11 20:29:17 status half-installed eclipse:all 3.8.1-5.1
+2016-09-11 20:29:18 status half-installed libcommons-beanutils-java:all 1.9.1-1
+2016-09-11 20:29:18 status half-installed libxz-java:all 1.4-1
+2016-09-11 20:29:18 status half-installed libcommons-compress-java:all 1.6-1
+2016-09-11 20:29:19 status half-installed libcommons-digester-java:all 1.8.1-4
+2016-09-11 20:29:19 status half-installed libdb-je-java:all 3.3.98-1
+2016-09-11 20:29:19 status half-installed libdb5.3-java:all 5.3.28-3ubuntu3
+2016-09-11 20:29:20 status half-installed libfelix-osgi-obr-java:all 1.0.2-3fakesync1
+2016-09-11 20:29:20 status half-installed libfelix-shell-java:all 1.4.2-3
+2016-09-11 20:29:21 status half-installed libfelix-utils-java:all 1.1.0-3
+2016-09-11 20:29:21 status half-installed libgeronimo-jta-1.1-spec-java:all 1.1.1-3ubuntu1
+2016-09-11 20:29:21 status half-installed libicu4j-java:all 4.2.1.1-2
+2016-09-11 20:29:22 status half-installed libjline-java:all 1.0-2
+2016-09-11 20:29:22 status half-installed libjtidy-java:all 7+svn20110807-4
+2016-09-11 20:29:22 status half-installed libregexp-java:all 1.5-3build1
+2016-09-11 20:29:23 status half-installed libswt-glx-gtk-3-jni:amd64 3.8.2-3
+2016-09-11 20:29:23 status half-installed libswt-gnome-gtk-3-jni:amd64 3.8.2-3
+2016-09-11 20:29:23 status half-installed libdb-java:all 1:5.3.21~exp1ubuntu1
+2016-09-11 20:29:24 status half-installed libkxml2-java:all 2.3.0+ds1-2
 
 
