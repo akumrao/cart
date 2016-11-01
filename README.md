@@ -11,15 +11,9 @@ The Google API Client Library enables you to work with Google APIs such as Googl
 ## Requirements ##
 * [PHP 5.4.0 or higher](http://www.php.net/)
 
-## Developer Documentation ##
-http://developers.google.com/api-client-library/php
-
-## Installation ##
 
 
-### Composer
-
-view them in your browser by running the php built-in web server.
+#
 
 ```
 ```
