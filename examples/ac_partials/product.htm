@@ -1,0 +1,68 @@
+<div id="store" class="content col-md-12" style="overflow: hidden;">
+
+    <div id="prod-top" class="prod-top-img col-md-12">
+        <div class="product_block">
+
+            <div ng-show="product.showvideo">
+                <img ng-src="{{product.imagename}}" alt="{{product.imagename}}" style="padding-right:20px !important;" /><br />
+            </div>
+
+            <div ng-show="product.showvideo" class="video_wrapper" style="padding-right:20px !important;">
+                <div my-youtube code="product.videoid"></div>
+            </div>
+            
+  
+            <span style="font-family:Arial Black;font-size:1.8em;font-weight:bold;" ng-bind-html="product.header | unsafe"></span><br />
+            <p class="product_description" ng-bind-html="product.description | unsafe"></p><br />
+
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="container-fluid">
+        <div class="row-fluid content-backcolor">
+            <div class="col-md-8">
+
+                <!-- product info -->
+                <table class="table table-bordered">
+                    <tr class="well">
+                        <td class="tdRight" colspan="3">
+                            <a href="index.html#/cart" class="cart-txt-color" title="proceed to shopping cart" ng-disabled="cart.getTotalCount() < 1">
+                                <b>{{cart.getTotalCount()}}</b> items, <b>{{cart.getTotalPrice() | currency : selectedCurrency}}</b>
+                                <div style="display:inline !important;">
+                                    <span class="btn btn-xs btn-split">proceed to <img class="img-split" src="ac_img/cart.png" /></span>
+                                </div>
+                                <span class="txt-cart-prod" ng-show="cart.getTotalCount(product.sku) > 0"><br /><strong>this item is in the cart</strong></span>
+                                <span class="txt-cart-prod" ng-show="cart.getTotalCount(product.sku) < 1"><br /><strong>this item is NOT in the cart</strong></span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tdRight detail-img">
+                            <!--<img ng-src="{{product.imagename}}" alt=""/>-->
+                        </td>
+                        <td class="tdRight product_productname"><p ng-bind-html="product.productname | unsafe"></p></td>
+                        <td class="tdCenter product_categoryname"><p ng-bind-html="product.categoryname | unsafe"></p></td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- buttons -->
+            <div class="col-md-4">
+                <button class="btn btn-block btn-success"
+                        ng-click="cart.addItem(product.sku, product.productname, product.unitprice, 1)">
+                    <i class="icon-shopping-cart icon-white" /> add to cart
+                </button>
+                <button class="btn btn-block btn-danger"
+                        ng-click="cart.addItem(product.sku, product.productname, product.unitprice, -10000)"
+                        ng-disabled="cart.getTotalCount(product.sku) < 1">
+                    <i class="icon-trash icon-white" /> remove from cart
+                </button>
+                <button class="btn btn-block"
+                        onclick="window.location.href=''">
+                    <i class="icon-chevron-left" /> back to store
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

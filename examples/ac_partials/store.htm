@@ -1,0 +1,122 @@
+<!-- BILL SERGIO - for use in my Responsive Mobile AngularJS Shopping Cart use the 2 lines of code below to add to cart -->
+<!-- BILL SERGIO - use this code if slider is NOT in my Responsive Mobile AngularJS Shopping Cart -->
+<!-- BILL SERGIO - This allows a distributor selling your products to place this slider on their NON-AngularJS website -->
+<!--<a ng-href="http://www.software-rus.com/index.html?distid={{DISTRIBUTOR_ID}}&sku={{slide.sku}}#/cart" target="_blank" class="btn btn-sm btn-default">Buy </a>-->
+
+<div id="store" class="content col-md-12" style="overflow: hidden;" ng-controller="storeController">
+    <form class="form-search">
+        <div class="col-md-12 store_container">
+            <div class="content-store col-md-5">
+                <a href="index.html#/cart" title="proceed to shopping cart" ng-disabled="cart.getTotalCount() < 1">
+                    <b>{{cart.getTotalCount()}}</b> items, <b>{{cart.getTotalPrice() | currency : selectedCurrency}}</b>
+                    <div style="display:inline !important;">
+                        <span class="btn btn-xs btn-split hvr-pulse">proceed to <img class="img-split" src="ac_img/cart.png" /></span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="tabs-menu col-md-5" style="white-space:nowrap !important;">
+                <ul class="cbp-vm-options">
+                    <li ng-repeat="section in sections">
+                        <!--<a ng-href="#" class="cbp-vm-icon cbp-vm-grid cbp-vm-selected" data-view="cbp-vm-view-grid">Grid View</a>
+                        <a ng-href="#" class="cbp-vm-icon cbp-vm-list" data-view="cbp-vm-view-list">List View</a>-->
+                        <a class="cbp-vm-icon cbp-vm-grid {{section.class}}" ng-class="{cbpvmselected : isSelected(section)}" ng-click="updateDisplay(section)">{{section.name}}</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-12 store_button_top">
+            <table style="float:right;">
+                <tr>
+                    <td><button class="btn" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><</button></td>
+                    <td><p>&nbsp;&nbsp;{{currentPage + 1}}/{{pageCount()}}&nbsp;&nbsp;</p></td>
+                    <td><button class="btn" ng-disabled="nextPage()" ng-click="currentPage=currentPage+1">></button></td>
+                </tr>
+            </table>
+
+            <div style="width: 300px !important;padding-bottom: 12px !important;">
+                <input type="text" ng-model="query" ng-change="search('productname')" class="searchbox" placeholder="Search">
+            </div>
+            <div class="filter-button-top">
+                <button class="btn flr-top-first" ng-click="filterCategory('categoryname',null)">All</button>
+            </div>
+            <div ng-repeat="product in products | unique: 'categoryname'" class="filter-button-top">
+                <button class="btn flr-top" ng-click="filterCategory('categoryname', product.categoryname)">{{product.categoryname}}</button>
+            </div>
+
+
+            </div>
+
+        <div class="clear" style="height: 4px !important;"></div>
+
+        <div id="cbp-vm" class="cbp-vm-switcher" ng-class="{true: '', false: 'activegrid'}[isActive]">
+            <ul id="product" class="nav-pills nav-stacked rectangle-list">
+                <li ng-repeat="product in pagedItems[currentPage] | filter:query | orderBy:'sortorder'" class="store_pill ng-scope {{AN_STORE_PILL}}">
+                    <div class="store_img_video {{AN_STORE_IMG_VIDEO}}">
+                        <div ng-hide="product.showvideo > 0" ng-show="product.showvideo < 1">
+                            <!--USE THIS TO POPUP MODAL DIALOG: <a href="#" ng-click="launchSimpleModal(product)"> -->
+                            <a href="#/products/{{product.sku}}"><img ng-src="{{product.imagename}}" alt="{{product.productname}}" style="display: block;height: 100%;max-height:200px" /></a>
+                        </div>
+                        <div ng-show="product.showvideo > 0">
+                            <div embed-video tube="product.tube" code="product.videoid"></div>
+                        </div>
+                    </div>
+
+                    <div class="store_block">
+                        <div class="store_header">
+                            <div ng-bind-html="product.header | unsafe"></div>
+                        </div>
+                        <div class="store_shortdesc" ng-bind-html="product.shortdesc | unsafe">
+                            <span ng-show="product.link.length > 0">
+                                <a href="{{product.link}}" target="_blank"><span class="btn btn-x-blue">{{product.linktext}}</span></a>
+                            </span>
+                        </div>
+                        <div style="display:inline !important">
+                            <a href="" ng-click="cart.addItem(product.sku, product.productname, product.unitprice, 1)" autoscroll>
+                                <div class="btn btn-x-blue">Add cart</div>
+                            </a>
+                            <a ng-href="#/products/{{product.sku}}">
+                                <div class="btn btn-x-blue">Details</div>
+                            </a>
+
+                            <div class="content_price"
+                                 style="text-align:right !important;padding:0 5% 0 20px !important;float:right !important;">
+                                {{product.unitprice | currency : selectedCurrency}}
+                                <span ng-show="cart.getTotalCount(product.sku) > 0">
+                                    <i class="fa fa-check-square-o"></i>{{cart.getTotalCount(product.sku)}}
+                                </span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="categoryname" href="#" style="margin:2px 5% 0 20px !important;float:right !important;">{{product.categoryname}}</div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="col-md-12 store_container store_footer">
+                <div class="content-store col-md-5">
+                    <a href="index.html#/cart" title="proceed to shopping cart" ng-disabled="cart.getTotalCount() < 1">
+                        <b>{{cart.getTotalCount()}}</b> items, <b>{{cart.getTotalPrice() | currency : selectedCurrency}}</b>
+                        <div style="display:inline !important;">
+                            <span class="btn btn-xs btn-split hvr-pulse">proceed to <img class="img-split" src="ac_img/cart.png" /></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-5 store_bottom">
+                    <table style="float:right;">
+                        <tr>
+                            <td><button class="btn" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><</button></td>
+                            <td><p>&nbsp;&nbsp;{{currentPage + 1}}/{{pageCount()}}&nbsp;&nbsp;</p></td>
+                            <td><button class="btn" ng-disabled="nextPage()" ng-click="currentPage=currentPage+1">></button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+
+

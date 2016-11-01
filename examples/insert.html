@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<title>Search form with AngualrJS</title>
+<script src="ac_js/jquery-1.11.3.min.js" type="text/javascript"></script>    
+<script src="ac_js/angular.js"></script>
+<style>
+.myProgress {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color: #ddd;
+}
+
+.myBar {
+  position: absolute;
+  width: 1%;
+  height: 100%;
+  background-color: #4CAF50;
+}
+
+}
+</style>  
+
+<script src="file.js"></script>
+</head>
+
+<body >
+	<div ng-controller="fileCtrl">
+
+		<label>Do you want add new file in fodler
+			{{selectedFolder.name}} : <input type="checkbox"
+			ng-model="checkboxfilefolder">
+		</label>
+		<fieldset style="width: 480px" ng-disabled="!checkboxfilefolder">
+			<legend>Addfolder:</legend>
+			<form >
+				 <input type="text" ng-model="keywords"
+					class="input-medium search-query" placeholder="folder...">
+				<button type="submit" class="btn" ng-click="addfolder()">Add
+					Folder</button>
+				<p class="help-block">Check before adding new folder.You folder
+					might already exist</p>
+			</form>
+			<pre ng-model="folderresult">{{folderresult}}</pre>
+		</fieldset>
+
+
+		<fieldset style="width: 480px">
+		    <legend>Select a folder:</legend>
+			<select ng-model="selectedFolder" ng-change="folderchange()"
+				ng-options="x.name for x in cars">
+			</select>
+			<p>You selected: {{selectedFolder.name}}</p>
+			<p>Its id is: {{selectedFolder.id}}</p>
+		</fieldset>
+
+
+		<label>Do you want add new file in fodler
+			{{selectedFolder.name}} : <input type="checkbox"
+			ng-model="checkboxfile">
+		</label><br />
+
+		<fieldset style="width: 480px" ng-disabled="!checkboxfile">
+		   <legend>File-upload:</legend>
+			<div class="file-upload">
+				<input type="file" ng-click="clickFile()" ng-file-model="files" multiple />
+				<button type="button" ng-click="uploadFile()">Upload me</button>
+				<p ng-repeat="file in files">{{file.name}}</p>
+
+    			<div id="fileProgress" class="myProgress">
+  					<div id="fileBar" class="myBar"></div>
+				</div>
+				<pre ng-model="result"> {{statusmyfile}}
+			</div>
+		</fieldset>
+
+		<fieldset style="width: 480px">
+		   <legend>Select a file:</legend>
+			<select ng-model="selectedFile" ng-change="filechange()"
+				ng-options="x.name for x in carfiles">
+			</select>
+			<p>You selected: {{selectedFile.name}}</p>
+			<p>Its id is: {{selectedFile.id}}</p>
+		</fieldset>
+
+		<fieldset style="width: 880px" ng-show="showProperties">
+		   <legend>show Properties:</legend>
+			<form>
+				<table ng-model="filename1">
+					<tr ng-repeat="prop in properties">
+						<td>{{prop.key}}</td>
+						<td><input type='text' ng-model="prop.value"
+							style="resize: horizontal; width: 800px" /></td>
+					</tr>
+					<tr>
+						<td><button type="submit" class="btn"
+								ng-click="saveProperties()">Save Properties</button></td>
+						<td><button type="submit" class="btn"
+								ng-click="restProperties()">Reset Properties</button></td>
+					</tr>
+				</table>
+			</form>
+			<pre ng-model="propertresult">{{propertresult}}</pre>
+		</fieldset>
+
+		<br> </br>
+
+		<button type="submit" class="btn" ng-click="UpdateDatabase()">Update
+			Database</button>
+		<div id="databaseProgress" class="myProgress">
+  			<div id="databaseBar" class="myBar"></div>
+		</div>
+		<pre ng-model="updatedatabaseresult">{{updatedatabaseresult}}</pre>
+
+	</div>
+
+
+</body>
+
+</html>

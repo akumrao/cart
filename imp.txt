@@ -1,0 +1,30 @@
+sprintwe@sprintwell.com 
+iso*
+
+
+gmail account
+tester.sprintwell@gmail.com
+testing@1
+
+
+
+
+
+https://console.developers.google.com/iam-admin/serviceaccounts/project?project=sprintwell-143314
+
+https://console.developers.google.com/apis/credentials?project=sprintwell-143314
+
+https://drive.google.com/drive/my-drive
+
+
+
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server ipv6only=on;
+
+        root /data/google-api-php-client-2.0.3/examples;
+#       root /usr/share/nginx/html;
+#        root /data/google-api-php-client-2.0.3;
+        index index.html index.htm;
+
+
